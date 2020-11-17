@@ -1,0 +1,94 @@
+<!doctype html><html class="" data-reactroot=""><head>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="欢迎来到我的博客，这里搜集了我的技术文章和生活感悟，欢迎一起交流成长。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-react-helmet="true">apollo 入门 · creed的博客</title>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="/">creed的博客</a><aside class="hide_on_mobile"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;/assets/czs-close-l.svg&quot;)"></a><h1><a href="/">creed的博客</a></h1><p class="description">欢迎来到我的博客，这里搜集了我的技术文章和生活感悟，欢迎一起交流成长。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-message-l" href="mailto:zwg1573357558@foxmail.com" target="_blank" style="background-image:url(&quot;/assets/czs-message-l.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="/"><span class="czs-home-l" style="background-image:url(&quot;/assets/czs-home-l.svg&quot;)"></span>首页</a></li><li><a class="flex_center" href="/categories/"><span class="czs-category-l" style="background-image:url(&quot;/assets/czs-category-l.svg&quot;)"></span>分类</a></li><li><a class="flex_center" href="/tags/"><span class="czs-tag-l" style="background-image:url(&quot;/assets/czs-tag-l.svg&quot;)"></span>标签</a></li><li><a class="flex_center" href="/about/"><span class="czs-about-l" style="background-image:url(&quot;/assets/czs-about-l.svg&quot;)"></span>关于</a></li><li><a class="flex_center" href="/archives/"><span class="czs-box-l" style="background-image:url(&quot;/assets/czs-box-l.svg&quot;)"></span>归档</a></li><li><a class="flex_center" href="/links/"><span class="czs-link-l" style="background-image:url(&quot;/assets/czs-link-l.svg&quot;)"></span>友情链接</a></li></ul></nav></aside><section class="main"><h1>apollo 入门</h1><div class="main_post_meta"><time dateTime="Thu Sep 12 2019 00:00:00 GMT+0000 (UTC)">2019-09-13</time> · <!-- -->zhangwengang</div><article><h3 id="apollo%E7%9A%84%E5%8A%9F%E8%83%BD%E4%BA%AE%E7%82%B9">apollo的功能亮点<a class="anchor" href="#apollo%E7%9A%84%E5%8A%9F%E8%83%BD%E4%BA%AE%E7%82%B9">§</a></h3>
+<ol>
+<li>统一管理不同环境,不同集群的配置</li>
+<li>配置修改实时生效(热发布)</li>
+<li>版本发布管理</li>
+<li>灰度发布</li>
+<li>有权限管理</li>
+<li>文档完善 <a href="https://github.com/ctripcorp/apollo/wiki">apollo文档</a></li>
+</ol>
+<h3 id="apollo%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B">apollo基础模型<a class="anchor" href="#apollo%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B">§</a></h3>
+<ol>
+<li>用户在配置中心对配置进行修改并发布</li>
+<li>配置中心会通知客户端有配置更新</li>
+<li>客户端收到通知后,Apollo客户端从配置中心去拉取最新配置,更新本地配置并通知到应用</li>
+</ol>
+<h3 id="apollo%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">apollo核心概念<a class="anchor" href="#apollo%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">§</a></h3>
+<h4 id="1application%E5%BA%94%E7%94%A8%E4%B8%80%E4%B8%AA%E5%8F%91%E5%B8%83%E7%9A%84%E5%8D%95%E4%BD%8D">1.(application)应用,一个发布的单位<a class="anchor" href="#1application%E5%BA%94%E7%94%A8%E4%B8%80%E4%B8%AA%E5%8F%91%E5%B8%83%E7%9A%84%E5%8D%95%E4%BD%8D">§</a></h4>
+<p>就是使用配置的应用,Apollo客户端在运行时,需要知道当前应用是谁,从而去获取到对应的配置</p>
+<p>使用配置的应用要有唯一标示的aapid,由于应用身份是跟着代码走的,所以配置在代码中</p>
+<ul>
+<li>Java:classpath:/META-INF/app.properties -&gt; appid=</li>
+</ul>
+<h4 id="2environment%E7%8E%AF%E5%A2%83">2.(environment)环境<a class="anchor" href="#2environment%E7%8E%AF%E5%A2%83">§</a></h4>
+<ul>
+<li>配置对应的环境DEV,FAT,UAT,PRO,apollo客户端在运行时需要知道当前应用的运行环境,从而去获取到对应于该环境的配置.</li>
+<li>环境默认读取 C:/OPT/SETTINGS/server.properties或/opt/settings/server.properties env=</li>
+</ul>
+<p>的配置,同时也支持运行时通过System Properties 等制定 <a href="https://github.com/ctripcorp/apollo/wiki/Java%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">java客户端方法</a></p>
+<h4 id="3cluster%E9%9B%86%E7%BE%A4">3.(cluster)集群<a class="anchor" href="#3cluster%E9%9B%86%E7%BE%A4">§</a></h4>
+<ul>
+<li>一个应用下不同实例的分组,比如典型的可以按照数据中心分,把上海机房的应用实例分为一个集群,把北京机房的应用实例分为另外一个集群</li>
+<li>对应不同的集群,同一个配置可以有不同的值,如Zookeeper的地址</li>
+<li>集群默认是读取机器上的配置(server.properties的idc)),同时也支持运行时通过System Properties 等制定 <a href="https://github.com/ctripcorp/apollo/wiki/Java%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">java客户端方法</a></li>
+</ul>
+<h3 id="4-namespace%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">4. namespace(命名空间)<a class="anchor" href="#4-namespace%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">§</a></h3>
+<ul>
+<li>一个应用下不同配置的分组,可以简单的把namespace类比为文件,不同类型的配置放在不同的文件中,如数据库配置文件</li>
+<li>应用可以直接读取到公共组件的配置namespace</li>
+<li>应用也可以通过读取公共组件的配置namespace来对公共组件的配置做调整</li>
+</ul>
+<h3 id="apollo%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D">apollo架构模块介绍<a class="anchor" href="#apollo%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D">§</a></h3>
+<h4 id="config-service">Config Service<a class="anchor" href="#config-service">§</a></h4>
+<ul>
+<li>配置推送接口</li>
+<li>配置获取接口</li>
+<li>主要服务apollo客户端</li>
+</ul>
+<h4 id="admin-service">Admin Service<a class="anchor" href="#admin-service">§</a></h4>
+<ul>
+<li>配置管理接口</li>
+<li>配置修改,发布接口</li>
+<li>主要服务于Protal</li>
+</ul>
+<h4 id="meta-service">Meta Service<a class="anchor" href="#meta-service">§</a></h4>
+<ul>
+<li>Protal通过域名访问Meta Server 获取Admin Service 服务列表</li>
+<li>Client 通过域名访问Meta Server 获取Config Service服务列表</li>
+<li>就相当于一个Eureka Proxy(本来只需要eureka,客户端和protal就可以进行服务发现admin/config service ,但是为了达到多语言的支持,使用 Meta Servcie 对eureka进行了一层薄薄的封装,让client和protal通过域名访问Mea Server 进而获取config/admin服务列表))</li>
+</ul>
+<h4 id="eureka">Eureka<a class="anchor" href="#eureka">§</a></h4>
+<ul>
+<li>服务注册于发现</li>
+<li>服务Config/Admin Service的注册并报心跳</li>
+</ul>
+<h3 id="%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84%E8%A7%86%E5%9B%BE">服务端架构视图<a class="anchor" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84%E8%A7%86%E5%9B%BE">§</a></h3>
+<p><img src="../assets/apollo/610A4B1D-2D93-4759-A79F-E53C09D529ED.png" alt="20200315152253.png"><img src="../assets/apollo/Snipaste_2019-06-08_14-27-59.png" alt="20200315152244.png"><img src="../assets/apollo/0AD86E3B-EE41-4BB9-A72D-B39978AF7AA4.png" alt="20200315152231.png"></p>
+<h3 id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9E%B6%E6%9E%84%E8%A7%86%E5%9B%BE">客户端架构视图<a class="anchor" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9E%B6%E6%9E%84%E8%A7%86%E5%9B%BE">§</a></h3>
+<p><img src="../assets/apollo/A8AF27F5-CB88-469D-B45C-77FAF49216CC.png" alt="20200315152311.png"></p>
+<h4 id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%BB%E7%BB%93">客户端实现总结<a class="anchor" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%80%BB%E7%BB%93">§</a></h4>
+<h5 id="%E6%8E%A8%E6%8B%89%E7%BB%93%E5%90%88">推拉结合<a class="anchor" href="#%E6%8E%A8%E6%8B%89%E7%BB%93%E5%90%88">§</a></h5>
+<ol>
+<li>config Server 和客户端保持一个长连接,配置实现实时推送</li>
+<li>客户端定期从Config Server拉取配置</li>
+</ol>
+<h5 id="%E9%85%8D%E7%BD%AE%E7%BC%93%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0">配置缓存在本地<a class="anchor" href="#%E9%85%8D%E7%BD%AE%E7%BC%93%E5%AD%98%E5%9C%A8%E6%9C%AC%E5%9C%B0">§</a></h5>
+<ol>
+<li>客户端本地会再缓存一次</li>
+</ol>
+<h5 id="%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">应用程序<a class="anchor" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">§</a></h5>
+<ol>
+<li>通过apollo客户端获取最新配置</li>
+<li>订阅配置更新通知</li>
+</ol></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>

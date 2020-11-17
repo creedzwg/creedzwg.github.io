@@ -1,0 +1,94 @@
+<!doctype html><html class="" data-reactroot=""><head>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="欢迎来到我的博客，这里搜集了我的技术文章和生活感悟，欢迎一起交流成长。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-react-helmet="true">jvm · creed的博客</title>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="/">creed的博客</a><aside class="hide_on_mobile"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;/assets/czs-close-l.svg&quot;)"></a><h1><a href="/">creed的博客</a></h1><p class="description">欢迎来到我的博客，这里搜集了我的技术文章和生活感悟，欢迎一起交流成长。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-message-l" href="mailto:zwg1573357558@foxmail.com" target="_blank" style="background-image:url(&quot;/assets/czs-message-l.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="/"><span class="czs-home-l" style="background-image:url(&quot;/assets/czs-home-l.svg&quot;)"></span>首页</a></li><li><a class="flex_center" href="/categories/"><span class="czs-category-l" style="background-image:url(&quot;/assets/czs-category-l.svg&quot;)"></span>分类</a></li><li><a class="flex_center" href="/tags/"><span class="czs-tag-l" style="background-image:url(&quot;/assets/czs-tag-l.svg&quot;)"></span>标签</a></li><li><a class="flex_center" href="/about/"><span class="czs-about-l" style="background-image:url(&quot;/assets/czs-about-l.svg&quot;)"></span>关于</a></li><li><a class="flex_center" href="/archives/"><span class="czs-box-l" style="background-image:url(&quot;/assets/czs-box-l.svg&quot;)"></span>归档</a></li><li><a class="flex_center" href="/links/"><span class="czs-link-l" style="background-image:url(&quot;/assets/czs-link-l.svg&quot;)"></span>友情链接</a></li></ul></nav></aside><section class="main"><h1>jvm</h1><div class="main_post_meta"><time dateTime="Thu Oct 11 2018 00:00:00 GMT+0000 (UTC)">2018-10-12</time> · <!-- -->zhangwengang</div><article><h3 id="jvm-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">jvm 的生命周期<a class="anchor" href="#jvm-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">§</a></h3>
+<h4 id="%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8">虚拟机的启动<a class="anchor" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%90%AF%E5%8A%A8">§</a></h4>
+<p>1：java虚拟机的启动是通过引导类加载器（bootstrap class loader）创建一个初始类（initial class)来完成的，这个类是由虚拟机的具体事项指定的</p>
+<h4 id="%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%89%A7%E8%A1%8C">虚拟机的执行<a class="anchor" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E6%89%A7%E8%A1%8C">§</a></h4>
+<ul>
+<li>一个运行中的Java虚拟机有着一个清晰地任务：执行java程序</li>
+<li>程序开始执行时他才运行，程序结束时他就停止</li>
+<li>执行一个所谓的java程序的时候，真正执行的是一个叫做java虚拟机的进程</li>
+</ul>
+<h4 id="%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BB%93%E6%9D%9F">虚拟机的结束<a class="anchor" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E7%BB%93%E6%9D%9F">§</a></h4>
+<ul>
+<li>当虚拟机中除了守护线程以外，没有其他线程运行时，虚拟机就会退出</li>
+<li>当程序抛出异常时</li>
+<li></li>
+</ul>
+<h4 id="jvm%E7%9A%84%E7%BB%93%E6%9E%84">jvm的结构<a class="anchor" href="#jvm%E7%9A%84%E7%BB%93%E6%9E%84">§</a></h4>
+<p><img src="https://img.hacpai.com/file/2020/03/20200315160049-d756f8e7.png" alt="20200315160049.png"><img src="https://img.hacpai.com/file/2020/03/20200315160058-1aad0379.png" alt="20200315160058.png"></p>
+<h4 id="%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E5%8F%8A%E5%85%B6%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B">类加载器及其类加载过程<a class="anchor" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E5%8F%8A%E5%85%B6%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B">§</a></h4>
+<p><img src="https://img.hacpai.com/file/2020/03/20200315160106-ad21d136.png" alt="20200315160106.png"></p>
+<ol>
+<li>类加载子系统负责从文件系统或者网络中加载class文件，class文件在文件开头有特定的文件标识</li>
+<li>class loader只是负责class文件的加载，至于他是否可以运行，则有execution engine决定</li>
+<li>加载的类信息存放于一块称为方法区的内存空间。除了类的信息外，方法区还会存在运行时常量池信息（可能包括字符串字面量和数字产量）</li>
+</ol>
+<h4 id="%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B">类的加载过程<a class="anchor" href="#%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B">§</a></h4>
+<p><img src="https://img.hacpai.com/file/2020/03/20200315160112-1aeab98c.png" alt="20200315160112.png"></p>
+<h6 id="%E5%8A%A0%E8%BD%BD">加载<a class="anchor" href="#%E5%8A%A0%E8%BD%BD">§</a></h6>
+<ol>
+<li>通过类的全限定名获取定义此类的二进制字节流</li>
+<li>将这个字节流所代表的的静态存储结构转换为方法区的运行时数据结构</li>
+<li><strong>在内存生成一个代表这个类的java.lang.class对象</strong> ，作为方法区这个类的各种数据的访问入口</li>
+</ol>
+<h6 id="%E9%93%BE%E6%8E%A5%E9%98%B6%E6%AE%B5">链接阶段<a class="anchor" href="#%E9%93%BE%E6%8E%A5%E9%98%B6%E6%AE%B5">§</a></h6>
+<ul>
+<li>验证：目的在于确保class文件中的字节流包含信息符合当前虚拟机要求，保证被加载类的正确性</li>
+<li>准备：为类变量（static修饰）分配内存并且设置类变量的默认初始化，即零值</li>
+<li>解析：将常量池中的符合引用转换为直接引用的过程</li>
+</ul>
+<h6 id="%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5">初始化阶段<a class="anchor" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%98%B6%E6%AE%B5">§</a></h6>
+<ul>
+<li>初始化阶段就是执行类构造器方法<clinit>的过程</li>
+<li>此方法不需要定义，是javac编译器自动收集类中的赋值动作和静态代码块中的语句合并而来</li>
+<li>构造器方法中指令按语句在源文件中出现的顺序执行</li>
+<li>clinit不同于类的构造器</li>
+<li>虚拟机必须保证一个类的clinit方法在多线程下呗同步加锁</li>
+</ul>
+<h4 id="%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">类加载器<a class="anchor" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">§</a></h4>
+<h5 id="bootstrap-class-loader%E5%BC%95%E5%AF%BC%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">bootstrap class loader（引导类加载器）<a class="anchor" href="#bootstrap-class-loader%E5%BC%95%E5%AF%BC%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">§</a></h5>
+<ol>
+<li>这个类加载器使用c/c++实现的，嵌套在JVM内部</li>
+<li>他用来加载Java的核心库（rt.jar source.jar 等),用于提供JVM自身需要的类</li>
+<li>并不继承自java.lang.classLoader.没有父加载器</li>
+<li>用来加载扩展类加载器和程序类加载器,作为他们的父类(扩展和程序类加载器也是对象,也需要被加载)</li>
+<li>出于安全考虑,Bootstrap类加载器只加载包名为java.javax,sun等开头的类</li>
+</ol>
+<h5 id="extension-class-loader-%E6%89%A9%E5%B1%95%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">extension class loader (扩展类加载器)<a class="anchor" href="#extension-class-loader-%E6%89%A9%E5%B1%95%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">§</a></h5>
+<ol>
+<li>java语言编号,由sun.misc.launcher$ExtClassLoader实现</li>
+<li>派生于classLoader类</li>
+<li>父加载器为引导类加载器</li>
+<li>从java.ext.dirs或从jdk的安装木木jre/lib/ext子目录下加载类库,如果用户创建的jar放在此目录下,也会自动的由扩展类加载器加载</li>
+</ol>
+<h5 id="application-class-loader%E7%A8%8B%E5%BA%8F%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">application class loader(程序类加载器)<a class="anchor" href="#application-class-loader%E7%A8%8B%E5%BA%8F%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">§</a></h5>
+<p>1.用的最多的类加载器,非引导或者扩展类加载器不加载的类都由程序类加载器加载或自定义类加载器加载</p>
+<h4 id="%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6">双亲委派机制<a class="anchor" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6">§</a></h4>
+<p>java虚拟机对class文件采用的是<strong>按需加载</strong>的方式,也就是说当需要使用该类时才会将它的class文件加载到内存生成class对象.而且加载某个类的class文件时采取的<strong>双亲委派</strong>模式,即把请求交由父类处理</p>
+<h5 id="%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E">详细说明<a class="anchor" href="#%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E">§</a></h5>
+<ol>
+<li>如果一个类加载器收到了类加载的请求,他首先不会自己去加载,而是将这个请求委托给父加载器去执行</li>
+<li>如果父类加载器还存在其父类加载器,则依次向上传递,最终到达顶层的引导类加载器</li>
+<li>如果父类加载器可以完成类加载任务,就成功返回,倘若父类加载器无法完成此加载任务,子加载器才会尝试自己去加载,这就是双亲委派模式</li>
+</ol>
+<h6 id="%E4%BC%98%E5%8A%BF">优势<a class="anchor" href="#%E4%BC%98%E5%8A%BF">§</a></h6>
+<ol>
+<li>避免类的重复加载</li>
+<li>保护程序安全,防止核心api被篡改,java.lang.String</li>
+</ol>
+<h4 id="%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8program-count-register">程序计数器(program count register)<a class="anchor" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8program-count-register">§</a></h4>
+<ol>
+<li>程序计数器用来存储指向下一条指令的地址,也就是即将要执行的指令代码.由执行引擎读取下一条指令</li>
+<li>它是一块很小的内存空间,几乎可以忽略不计,也是运行速度最快的存储区域</li>
+<li>在jvm规范中,每个线程都有自己独立的程序计数器,是线程私有的,生命周期于线程的生命周期保持一致</li>
+</ol></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>
