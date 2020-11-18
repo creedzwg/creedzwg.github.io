@@ -18,8 +18,8 @@ export default {
                 "pagePath": "posts/read_plan.md",
                 "title": "2020学习计划",
                 "link": "posts/read_plan.html",
-                "date": "2020-10-11T00:00:00.000Z",
-                "updated": null,
+                "date": "2017-10-11T00:00:00.000Z",
+                "updated": "2020-11-18T03:34:24.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
@@ -27,7 +27,7 @@ export default {
                 "categories": [
                     "学习计划"
                 ],
-                "excerpt": "#2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
+                "excerpt": "2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
         "tags": [

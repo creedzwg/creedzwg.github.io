@@ -37,21 +37,6 @@ export default {
         "isPost": true,
         "posts": [
             {
-                "pagePath": "posts/read_plan.md",
-                "title": "2020学习计划",
-                "link": "posts/read_plan.html",
-                "date": "2020-10-11T00:00:00.000Z",
-                "updated": null,
-                "author": "zhangwengang",
-                "contributors": [
-                    "zhangwengang"
-                ],
-                "categories": [
-                    "学习计划"
-                ],
-                "excerpt": "#2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
-            },
-            {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
                 "link": "posts/volatile浅析.html",
@@ -148,6 +133,21 @@ export default {
                 ],
                 "excerpt": "jvm 的生命周期 虚拟机的启动 1：java虚拟机的启动是通过引导类加载器（bootstrap class loader）创建一个初始类（initial class)来完成的，这个类是由虚拟机的具体事项指定的 虚拟机的执行 - 一个运行中的Java虚拟机有着一个清...",
                 "cover": "https://img.hacpai.com/file/2020/03/20200315160049-d756f8e7.png"
+            },
+            {
+                "pagePath": "posts/read_plan.md",
+                "title": "2020学习计划",
+                "link": "posts/read_plan.html",
+                "date": "2017-10-11T00:00:00.000Z",
+                "updated": "2020-11-18T03:34:24.000Z",
+                "author": "zhangwengang",
+                "contributors": [
+                    "zhangwengang"
+                ],
+                "categories": [
+                    "学习计划"
+                ],
+                "excerpt": "2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
         "tags": [
