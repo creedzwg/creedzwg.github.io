@@ -71,6 +71,10 @@ export default {
             {
                 "name": "编程世界",
                 "count": 5
+            },
+            {
+                "name": "学习计划",
+                "count": 1
             }
         ]
     }

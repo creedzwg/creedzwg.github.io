@@ -30,6 +30,21 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "posts/read_plan.md",
+                "title": "2020学习计划",
+                "link": "posts/read_plan.html",
+                "date": "2020-10-11T00:00:00.000Z",
+                "updated": null,
+                "author": "zhangwengang",
+                "contributors": [
+                    "zhangwengang"
+                ],
+                "categories": [
+                    "学习计划"
+                ],
+                "excerpt": "#2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
+            },
+            {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
                 "link": "posts/volatile浅析.html",
@@ -166,6 +181,10 @@ export default {
             {
                 "name": "编程世界",
                 "count": 5
+            },
+            {
+                "name": "学习计划",
+                "count": 1
             }
         ]
     }

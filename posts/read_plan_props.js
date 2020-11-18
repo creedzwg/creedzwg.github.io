@@ -1,33 +1,36 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig },
-    'pagePath': "categories/README.md",
-    'layoutPath': "categories/_layout.tsx",
-    'outputPath': "categories/index.html",
-    'title': "分类",
+    'pagePath': "posts/read_plan.md",
+    'layoutPath': "posts/_layout.tsx",
+    'outputPath': "posts/read_plan.html",
+    'title': "2020学习计划",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>分类</h1>'
+            __html: '<h1>2020学习计划</h1>\n<p>#2020-11-16-2020-11-22</p>\n<ol>\n<li>学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等</li>\n</ol>'
         } }),
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'contentTitle': React.createElement("h1", { key: "0" }, "\u5206\u7C7B"),
+    'contentTitle': React.createElement("h1", { key: "0" }, "2020\u5B66\u4E60\u8BA1\u5212"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: ''
+            __html: '<p>#2020-11-16-2020-11-22</p>\n<ol>\n<li>学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等</li>\n</ol>'
         } }),
     'toc': null,
     'author': "zhangwengang",
     'contributors': [
         "zhangwengang"
     ],
-    'date': "2020-11-17T07:08:12.000Z",
+    'date': "2020-10-11T00:00:00.000Z",
     'updated': null,
-    'excerpt': "",
+    'excerpt': "#2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等",
     'cover': undefined,
+    'categories': [
+        "学习计划"
+    ],
     'blog': {
-        "isPost": false,
+        "isPost": true,
         "posts": [
             {
                 "pagePath": "posts/read_plan.md",

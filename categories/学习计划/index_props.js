@@ -1,38 +1,33 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig },
-    'pagePath': "tags/zookeeper/",
+    'pagePath': "categories/学习计划/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/zookeeper/index.html",
+    'outputPath': "categories/学习计划/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'title': "zookeeper",
+    'title': "学习计划",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/zookeeper.md",
-                "title": "zookeeper 入门",
-                "link": "posts/zookeeper.html",
-                "date": "2020-07-05T00:00:00.000Z",
+                "pagePath": "posts/read_plan.md",
+                "title": "2020学习计划",
+                "link": "posts/read_plan.html",
+                "date": "2020-10-11T00:00:00.000Z",
                 "updated": null,
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
                 ],
                 "categories": [
-                    "编程世界"
+                    "学习计划"
                 ],
-                "tags": [
-                    "zookeeper",
-                    "zab"
-                ],
-                "excerpt": "zookeeper是什么? 官网的介绍:zookeeper是一个开放源代码的分布式协调服务,由雅虎创建.是google chubby的开源实现,她是一个典型的分布式数据一致性的解决方案,分布式系统可以基于它来实现诸如数据发布/订阅,负载均衡,命名服务,...",
-                "cover": "../assets/zookeeper/zk%20node.jpg"
+                "excerpt": "#2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
         "tags": [
