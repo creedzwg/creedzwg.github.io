@@ -68,7 +68,7 @@ categories:
    然后发送一个Encrypted Handshake Message将已经商定好的参数等采用协商密钥进行加密，发送给服务器用于数据与握手验证
 7. 同样，服务器也可以发送 Change Cipher Spec，说：“没问题，咱们以后都采用协商的通信密钥和加密算法进行加密通信了”，并且也发送 Encrypted Handshake Message 的消息试试。
    当双方握手结束 之后，就可以通过对称密钥进行加密传输了
-![tls握手流程图](../../assets/https/2020-12-07_17-29-52.png)
+![tls握手流程图](../assets/https/2020-12-07_17-29-52.png)
 #####  握手完毕,双方开始正常通信
 > 传输层->网络层->链路层
 
@@ -78,7 +78,7 @@ categories:
 > 2. B: 好啊,我知道了
 > 3. B: a啊,我也不想忘了,拜拜
  4. A: 好的,我知道了,拜拜
-![tcp4次挥手流程图](../../assets/https/2020-12-10_10-25-55.png)
+![tcp4次挥手流程图](../assets/https/2020-12-10_10-25-55.png)
     
 1.   client 发送FIN,seq=q, 进入FIN_WAIT_1状态
 2.   server 端回复ACK,ack=q+1,进入close_wait状态
