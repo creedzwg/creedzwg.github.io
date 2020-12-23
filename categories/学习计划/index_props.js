@@ -1,6 +1,6 @@
 import projectConfig from '/pagic.config.js';
 export default {
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "categories/学习计划/",
     'layoutPath': "archives/_layout.tsx",
     'outputPath': "categories/学习计划/index.html",
@@ -30,6 +30,20 @@ export default {
                 "excerpt": "2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
+        "categories": [
+            {
+                "name": "编程世界",
+                "count": 6
+            },
+            {
+                "name": "一天一道面试题",
+                "count": 1
+            },
+            {
+                "name": "学习计划",
+                "count": 1
+            }
+        ],
         "tags": [
             {
                 "name": "并发编程",
@@ -40,11 +54,23 @@ export default {
                 "count": 1
             },
             {
+                "name": "http",
+                "count": 1
+            },
+            {
+                "name": "https",
+                "count": 1
+            },
+            {
                 "name": "java8",
                 "count": 1
             },
             {
                 "name": "jvm",
+                "count": 1
+            },
+            {
+                "name": "linux",
                 "count": 1
             },
             {
@@ -61,16 +87,6 @@ export default {
             },
             {
                 "name": "配置中心",
-                "count": 1
-            }
-        ],
-        "categories": [
-            {
-                "name": "编程世界",
-                "count": 5
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ]

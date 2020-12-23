@@ -1,58 +1,38 @@
 import projectConfig from '/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/并发编程/",
+    'pagePath': "tags/http/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/并发编程/index.html",
+    'outputPath': "tags/http/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "/index.js", type: "module" })),
-    'title': "并发编程",
+    'title': "http",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/volatile浅析.md",
-                "title": "volatile浅析",
-                "link": "posts/volatile浅析.html",
-                "date": "2020-10-11T00:00:00.000Z",
-                "updated": null,
+                "pagePath": "posts/https.md",
+                "title": "一次https请求的流程",
+                "link": "posts/https.html",
+                "date": "2020-12-04T00:00:00.000Z",
+                "updated": "2020-12-23T08:10:12.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
                 ],
                 "categories": [
-                    "编程世界"
+                    "一天一道面试题"
                 ],
                 "tags": [
-                    "volatile",
-                    "并发编程"
+                    "http",
+                    "https"
                 ],
-                "excerpt": "简介 1. volatile 关键是用来修饰静态变量和实例变量的,对于方法参数,局部变量和实例常量和类常量都不能修饰 2. volatile修饰的类变量和实例变量能保证两次语义 - :保证了不同线程对共享变量操作时的可见性,即一个线程对变量的...",
-                "cover": "../assets/volatile/jmm.jpg"
-            },
-            {
-                "pagePath": "posts/jvm hello world.md",
-                "title": "jvm",
-                "link": "posts/jvm hello world.html",
-                "date": "2018-10-11T00:00:00.000Z",
-                "updated": null,
-                "author": "zhangwengang",
-                "contributors": [
-                    "zhangwengang"
-                ],
-                "categories": [
-                    "编程世界"
-                ],
-                "tags": [
-                    "jvm",
-                    "并发编程"
-                ],
-                "excerpt": "jvm 的生命周期 虚拟机的启动 1：java虚拟机的启动是通过引导类加载器（bootstrap class loader）创建一个初始类（initial class)来完成的，这个类是由虚拟机的具体事项指定的 虚拟机的执行 - 一个运行中的Java虚拟机有着一个清...",
-                "cover": "https://img.hacpai.com/file/2020/03/20200315160049-d756f8e7.png"
+                "excerpt": "相关名词解释 https - 首先说一下https,https全文名称(hyper text transfer protocol over SecureSocket layer) ,字面意思是在ssl基础上的 http协议,在传统http的基础上,通过加密传输,身份认证(ssl)保证了传输过程的安全性,htt...",
+                "cover": "../assets/https/2020-12-07_17-29-52.png"
             }
         ],
         "categories": [

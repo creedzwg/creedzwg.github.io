@@ -1,6 +1,6 @@
 import projectConfig from '/pagic.config.js';
 export default {
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "about/README.md",
     'layoutPath': "_layout.tsx",
     'outputPath': "about/index.html",
@@ -29,6 +29,45 @@ export default {
     'blog': {
         "isPost": false,
         "posts": [
+            {
+                "pagePath": "posts/https.md",
+                "title": "一次https请求的流程",
+                "link": "posts/https.html",
+                "date": "2020-12-04T00:00:00.000Z",
+                "updated": "2020-12-23T08:10:12.000Z",
+                "author": "zhangwengang",
+                "contributors": [
+                    "zhangwengang"
+                ],
+                "categories": [
+                    "一天一道面试题"
+                ],
+                "tags": [
+                    "http",
+                    "https"
+                ],
+                "excerpt": "相关名词解释 https - 首先说一下https,https全文名称(hyper text transfer protocol over SecureSocket layer) ,字面意思是在ssl基础上的 http协议,在传统http的基础上,通过加密传输,身份认证(ssl)保证了传输过程的安全性,htt...",
+                "cover": "../assets/https/2020-12-07_17-29-52.png"
+            },
+            {
+                "pagePath": "posts/linux_hello_world.md",
+                "title": "linux 浅析",
+                "link": "posts/linux_hello_world.html",
+                "date": "2020-11-28T00:00:00.000Z",
+                "updated": null,
+                "author": "zhangwengang",
+                "contributors": [
+                    "zhangwengang"
+                ],
+                "categories": [
+                    "编程世界"
+                ],
+                "tags": [
+                    "linux"
+                ],
+                "excerpt": "linux 目录配置 1. 可分享的: 可以分享给其他系统挂载使用的目录,包括可执行文件和一些用户自身数据,其他系统拿到就可以直接使用的 2. 不可分享的: 自身机器上面的配置文件, 3: 不变的: 有些数据是不会经常变动的,例如函数库,说...",
+                "cover": "../assets/linux/linux.png"
+            },
             {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
@@ -143,6 +182,20 @@ export default {
                 "excerpt": "2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
+        "categories": [
+            {
+                "name": "编程世界",
+                "count": 6
+            },
+            {
+                "name": "一天一道面试题",
+                "count": 1
+            },
+            {
+                "name": "学习计划",
+                "count": 1
+            }
+        ],
         "tags": [
             {
                 "name": "并发编程",
@@ -153,11 +206,23 @@ export default {
                 "count": 1
             },
             {
+                "name": "http",
+                "count": 1
+            },
+            {
+                "name": "https",
+                "count": 1
+            },
+            {
                 "name": "java8",
                 "count": 1
             },
             {
                 "name": "jvm",
+                "count": 1
+            },
+            {
+                "name": "linux",
                 "count": 1
             },
             {
@@ -174,16 +239,6 @@ export default {
             },
             {
                 "name": "配置中心",
-                "count": 1
-            }
-        ],
-        "categories": [
-            {
-                "name": "编程世界",
-                "count": 5
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ]

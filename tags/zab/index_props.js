@@ -1,6 +1,6 @@
 import projectConfig from '/pagic.config.js';
 export default {
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "tags/zab/",
     'layoutPath': "archives/_layout.tsx",
     'outputPath': "tags/zab/index.html",
@@ -35,6 +35,20 @@ export default {
                 "cover": "../assets/zookeeper/zk%20node.jpg"
             }
         ],
+        "categories": [
+            {
+                "name": "编程世界",
+                "count": 6
+            },
+            {
+                "name": "一天一道面试题",
+                "count": 1
+            },
+            {
+                "name": "学习计划",
+                "count": 1
+            }
+        ],
         "tags": [
             {
                 "name": "并发编程",
@@ -45,11 +59,23 @@ export default {
                 "count": 1
             },
             {
+                "name": "http",
+                "count": 1
+            },
+            {
+                "name": "https",
+                "count": 1
+            },
+            {
                 "name": "java8",
                 "count": 1
             },
             {
                 "name": "jvm",
+                "count": 1
+            },
+            {
+                "name": "linux",
                 "count": 1
             },
             {
@@ -66,16 +92,6 @@ export default {
             },
             {
                 "name": "配置中心",
-                "count": 1
-            }
-        ],
-        "categories": [
-            {
-                "name": "编程世界",
-                "count": 5
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ]

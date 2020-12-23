@@ -1,6 +1,6 @@
 import projectConfig from '/pagic.config.js';
 export default {
-    config: { "root": "/", ...projectConfig },
+    config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "categories/编程世界/",
     'layoutPath': "archives/_layout.tsx",
     'outputPath': "categories/编程世界/index.html",
@@ -14,6 +14,25 @@ export default {
     'blog': {
         "isPost": false,
         "posts": [
+            {
+                "pagePath": "posts/linux_hello_world.md",
+                "title": "linux 浅析",
+                "link": "posts/linux_hello_world.html",
+                "date": "2020-11-28T00:00:00.000Z",
+                "updated": null,
+                "author": "zhangwengang",
+                "contributors": [
+                    "zhangwengang"
+                ],
+                "categories": [
+                    "编程世界"
+                ],
+                "tags": [
+                    "linux"
+                ],
+                "excerpt": "linux 目录配置 1. 可分享的: 可以分享给其他系统挂载使用的目录,包括可执行文件和一些用户自身数据,其他系统拿到就可以直接使用的 2. 不可分享的: 自身机器上面的配置文件, 3: 不变的: 有些数据是不会经常变动的,例如函数库,说...",
+                "cover": "../assets/linux/linux.png"
+            },
             {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
@@ -113,6 +132,20 @@ export default {
                 "cover": "https://img.hacpai.com/file/2020/03/20200315160049-d756f8e7.png"
             }
         ],
+        "categories": [
+            {
+                "name": "编程世界",
+                "count": 6
+            },
+            {
+                "name": "一天一道面试题",
+                "count": 1
+            },
+            {
+                "name": "学习计划",
+                "count": 1
+            }
+        ],
         "tags": [
             {
                 "name": "并发编程",
@@ -123,11 +156,23 @@ export default {
                 "count": 1
             },
             {
+                "name": "http",
+                "count": 1
+            },
+            {
+                "name": "https",
+                "count": 1
+            },
+            {
                 "name": "java8",
                 "count": 1
             },
             {
                 "name": "jvm",
+                "count": 1
+            },
+            {
+                "name": "linux",
                 "count": 1
             },
             {
@@ -144,16 +189,6 @@ export default {
             },
             {
                 "name": "配置中心",
-                "count": 1
-            }
-        ],
-        "categories": [
-            {
-                "name": "编程世界",
-                "count": 5
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ]
