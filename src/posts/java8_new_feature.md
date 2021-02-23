@@ -6,7 +6,7 @@ tags:
   - java8
 ---
 
-# java8 lambda,stream流浅析
+# java8 新特性教程
 > 代码地址:https://github.com/creedzwg/java8_action.git
 
 ## 讲解的新特性
