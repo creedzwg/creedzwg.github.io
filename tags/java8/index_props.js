@@ -16,10 +16,10 @@ export default {
         "posts": [
             {
                 "pagePath": "posts/java8_new_feature.md",
-                "title": "java8 lambda,stream流浅析",
+                "title": "java8 新特性教程",
                 "link": "posts/java8_new_feature.html",
                 "date": "2019-05-23T00:00:00.000Z",
-                "updated": null,
+                "updated": "2021-02-23T06:35:38.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
@@ -36,14 +36,10 @@ export default {
         "categories": [
             {
                 "name": "编程世界",
-                "count": 6
+                "count": 5
             },
             {
                 "name": "一天一道面试题",
-                "count": 1
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ],
@@ -70,10 +66,6 @@ export default {
             },
             {
                 "name": "jvm",
-                "count": 1
-            },
-            {
-                "name": "linux",
                 "count": 1
             },
             {

@@ -57,25 +57,6 @@ export default {
                 "cover": "../assets/https/2020-12-07_17-29-52.png"
             },
             {
-                "pagePath": "posts/linux_hello_world.md",
-                "title": "linux 浅析",
-                "link": "posts/linux_hello_world.html",
-                "date": "2020-11-28T00:00:00.000Z",
-                "updated": null,
-                "author": "zhangwengang",
-                "contributors": [
-                    "zhangwengang"
-                ],
-                "categories": [
-                    "编程世界"
-                ],
-                "tags": [
-                    "linux"
-                ],
-                "excerpt": "linux 目录配置 1. 可分享的: 可以分享给其他系统挂载使用的目录,包括可执行文件和一些用户自身数据,其他系统拿到就可以直接使用的 2. 不可分享的: 自身机器上面的配置文件, 3: 不变的: 有些数据是不会经常变动的,例如函数库,说...",
-                "cover": "../assets/linux/linux.png"
-            },
-            {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
                 "link": "posts/volatile浅析.html",
@@ -137,10 +118,10 @@ export default {
             },
             {
                 "pagePath": "posts/java8_new_feature.md",
-                "title": "java8 lambda,stream流浅析",
+                "title": "java8 新特性教程",
                 "link": "posts/java8_new_feature.html",
                 "date": "2019-05-23T00:00:00.000Z",
-                "updated": null,
+                "updated": "2021-02-23T06:35:38.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
@@ -172,34 +153,15 @@ export default {
                 ],
                 "excerpt": "jvm 的生命周期 虚拟机的启动 1：java虚拟机的启动是通过引导类加载器（bootstrap class loader）创建一个初始类（initial class)来完成的，这个类是由虚拟机的具体事项指定的 虚拟机的执行 - 一个运行中的Java虚拟机有着一个清...",
                 "cover": "https://img.hacpai.com/file/2020/03/20200315160049-d756f8e7.png"
-            },
-            {
-                "pagePath": "posts/read_plan.md",
-                "title": "2020学习计划",
-                "link": "posts/read_plan.html",
-                "date": "2017-10-11T00:00:00.000Z",
-                "updated": "2020-11-18T03:34:24.000Z",
-                "author": "zhangwengang",
-                "contributors": [
-                    "zhangwengang"
-                ],
-                "categories": [
-                    "学习计划"
-                ],
-                "excerpt": "2020-11-16-2020-11-22 1. 学习linux,对linux做到基本了解,权限,文件,shell,进程,内核等等"
             }
         ],
         "categories": [
             {
                 "name": "编程世界",
-                "count": 6
+                "count": 5
             },
             {
                 "name": "一天一道面试题",
-                "count": 1
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ],
@@ -226,10 +188,6 @@ export default {
             },
             {
                 "name": "jvm",
-                "count": 1
-            },
-            {
-                "name": "linux",
                 "count": 1
             },
             {

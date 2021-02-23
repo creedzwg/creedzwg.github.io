@@ -15,25 +15,6 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "posts/linux_hello_world.md",
-                "title": "linux 浅析",
-                "link": "posts/linux_hello_world.html",
-                "date": "2020-11-28T00:00:00.000Z",
-                "updated": null,
-                "author": "zhangwengang",
-                "contributors": [
-                    "zhangwengang"
-                ],
-                "categories": [
-                    "编程世界"
-                ],
-                "tags": [
-                    "linux"
-                ],
-                "excerpt": "linux 目录配置 1. 可分享的: 可以分享给其他系统挂载使用的目录,包括可执行文件和一些用户自身数据,其他系统拿到就可以直接使用的 2. 不可分享的: 自身机器上面的配置文件, 3: 不变的: 有些数据是不会经常变动的,例如函数库,说...",
-                "cover": "../assets/linux/linux.png"
-            },
-            {
                 "pagePath": "posts/volatile浅析.md",
                 "title": "volatile浅析",
                 "link": "posts/volatile浅析.html",
@@ -95,10 +76,10 @@ export default {
             },
             {
                 "pagePath": "posts/java8_new_feature.md",
-                "title": "java8 lambda,stream流浅析",
+                "title": "java8 新特性教程",
                 "link": "posts/java8_new_feature.html",
                 "date": "2019-05-23T00:00:00.000Z",
-                "updated": null,
+                "updated": "2021-02-23T06:35:38.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"
@@ -135,14 +116,10 @@ export default {
         "categories": [
             {
                 "name": "编程世界",
-                "count": 6
+                "count": 5
             },
             {
                 "name": "一天一道面试题",
-                "count": 1
-            },
-            {
-                "name": "学习计划",
                 "count": 1
             }
         ],
@@ -169,10 +146,6 @@ export default {
             },
             {
                 "name": "jvm",
-                "count": 1
-            },
-            {
-                "name": "linux",
                 "count": 1
             },
             {
