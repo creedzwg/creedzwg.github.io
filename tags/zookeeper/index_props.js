@@ -19,7 +19,7 @@ export default {
                 "title": "zookeeper 入门",
                 "link": "posts/zookeeper.html",
                 "date": "2020-07-05T00:00:00.000Z",
-                "updated": null,
+                "updated": "2021-02-25T09:41:08.000Z",
                 "author": "zhangwengang",
                 "contributors": [
                     "zhangwengang"

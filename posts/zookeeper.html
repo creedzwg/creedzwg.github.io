@@ -78,35 +78,29 @@
 <li>消息广播:zookeeper只允许一个唯一的leader服务器进行事务请求的处理(非查询),leader服务器在接受到客户端的事务请求后,会生成对应的事务提案并发起一轮广播协议,(follower服务器收到请求)</li>
 <li>保证已经在leader服务器上提交的事务最终被所有的服务器提交,丢弃那些只在leader服务器上被提出的事务</li>
 </ul>
-<h2 id="zookeeper%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8">zookeeper的安装与使用<a class="anchor" href="#zookeeper%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8">§</a></h2>
-<p>tickTime=2000
-该参数用于配置leader服务器等待follower服务器启动,并与leader完成数据同步的时间,follower服务器会在启动的时候与leader服务器建立连接并完成数据的同步,从而确定自己对外提供服务的起始状态.leader服务器允许follower服务器在initlimit完成该任务
-initLimit=10
-该参数用于配置leader服务器和follower服务器之间进行心跳检测的最大延时时间,在zookeeper集群允许过程中,leader服务器会与所有的follower进行心跳检测来确定该服务器是否存活已经同步数据,如果leader服务器在synclimit时间内无法获得follower的心跳响应,那么leader服务器就会认为该follower已经脱离了同步,就会从服务中剔除
-syncLimit=5</p>
-<p>dataDir=/data/zookeeper/zk1/zk1/data/
+<h2 id="zookeeper%E7%9A%84%E4%B8%BB%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">zookeeper的主要配置文件<a class="anchor" href="#zookeeper%E7%9A%84%E4%B8%BB%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">§</a></h2>
+<pre class="language-autoit"><code class="language-autoit">tickTime<span class="token operator">=</span><span class="token number">2000</span>
+该参数用于配置leader服务器等待follower服务器启动<span class="token punctuation">,</span>并与leader完成数据同步的时间<span class="token punctuation">,</span>follower服务器会在启动的时候与leader服务器建立连接并完成数据的同步<span class="token punctuation">,</span>从而确定自己对外提供服务的起始状态<span class="token punctuation">.</span>leader服务器允许follower服务器在initlimit完成该任务
+initLimit<span class="token operator">=</span><span class="token number">10</span>
+该参数用于配置leader服务器和follower服务器之间进行心跳检测的最大延时时间<span class="token punctuation">,</span>在zookeeper集群允许过程中<span class="token punctuation">,</span>leader服务器会与所有的follower进行心跳检测来确定该服务器是否存活已经同步数据<span class="token punctuation">,</span>如果leader服务器在synclimit时间内无法获得follower的心跳响应<span class="token punctuation">,</span>那么leader服务器就会认为该follower已经脱离了同步<span class="token punctuation">,</span>就会从服务中剔除
+syncLimit<span class="token operator">=</span><span class="token number">5</span>
+
+dataDir<span class="token operator">=</span><span class="token operator">/</span>data<span class="token operator">/</span>zookeeper<span class="token operator">/</span>zk1<span class="token operator">/</span>zk1<span class="token operator">/</span>data<span class="token operator">/</span>
 dataLogDir
-可以不配置,默认值是dataDir,默认情况下,zookeeper会将事务日志文件和快照数据存储在同一个目录下,生产中使用时,要将两者进行区分开,事务日志对于磁盘的性能要求非常高,为了保证数据的一致性,zookeeper在返回客户端事务请求响应之前,必须将本次请求对应的事务日志写入到磁盘中.因此,事务日志的写入性能直接决定了zookeeper在处理事务请求时的吞吐,针对同一块磁盘的并发读写操作,比如说快照数据存储操作,如果都放在同一块目录,会极大影响事务日志的写性能,因此在生产使用过程中,要将dataDir和dataLogDir进行区分,最好单独给分配一个磁盘,以提高zookeeper的整体性能
+可以不配置<span class="token punctuation">,</span>默认值是dataDir<span class="token punctuation">,</span>默认情况下<span class="token punctuation">,</span>zookeeper会将事务日志文件和快照数据存储在同一个目录下<span class="token punctuation">,</span>生产中使用时<span class="token punctuation">,</span>要将两者进行区分开<span class="token punctuation">,</span>事务日志对于磁盘的性能要求非常高<span class="token punctuation">,</span>为了保证数据的一致性<span class="token punctuation">,</span>zookeeper在返回客户端事务请求响应之前<span class="token punctuation">,</span>必须将本次请求对应的事务日志写入到磁盘中<span class="token punctuation">.</span>因此<span class="token punctuation">,</span>事务日志的写入性能直接决定了zookeeper在处理事务请求时的吞吐<span class="token punctuation">,</span>针对同一块磁盘的并发读写操作<span class="token punctuation">,</span>比如说快照数据存储操作<span class="token punctuation">,</span>如果都放在同一块目录<span class="token punctuation">,</span>会极大影响事务日志的写性能<span class="token punctuation">,</span>因此在生产使用过程中<span class="token punctuation">,</span>要将dataDir和dataLogDir进行区分<span class="token punctuation">,</span>最好单独给分配一个磁盘<span class="token punctuation">,</span>以提高zookeeper的整体性能
 the port at which the clients will connect
-clientPort=2181
-该参数用来配置组成zookeeper集群的机器列表,id为server id ,与每台服务器的myid文件中的数字相对应,同时会配置两个端口,第一个端口是leader与follower进行通信与数据同步时所使用的端口,第二个端口是专门用于leader选举过程中的投票通信
-server.1=172.19.17.5:2888:2889
-server.2=172.19.17.5:3888:3889
-server.3=172.19.17.5:4888:4889### 分布式锁</p>
+clientPort<span class="token operator">=</span><span class="token number">2181</span>
+该参数用来配置组成zookeeper集群的机器列表<span class="token punctuation">,</span>id为server id <span class="token punctuation">,</span>与每台服务器的myid文件中的数字相对应<span class="token punctuation">,</span>同时会配置两个端口<span class="token punctuation">,</span>第一个端口是leader与follower进行通信与数据同步时所使用的端口<span class="token punctuation">,</span>第二个端口是专门用于leader选举过程中的投票通信
+server<span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">=</span><span class="token number">172.19</span><span class="token punctuation">.</span><span class="token number">17.5</span><span class="token punctuation">:</span><span class="token number">2888</span><span class="token punctuation">:</span><span class="token number">2889</span>
+server<span class="token punctuation">.</span><span class="token number">2</span><span class="token operator">=</span><span class="token number">172.19</span><span class="token punctuation">.</span><span class="token number">17.5</span><span class="token punctuation">:</span><span class="token number">3888</span><span class="token punctuation">:</span><span class="token number">3889</span>
+server<span class="token punctuation">.</span><span class="token number">3</span><span class="token operator">=</span><span class="token number">172.19</span><span class="token punctuation">.</span><span class="token number">17.5</span><span class="token punctuation">:</span><span class="token number">4888</span><span class="token punctuation">:</span><span class="token number">4889</span>
+</code></pre>
+<h2 id="zookeeper-%E5%9C%A8%E5%AE%9E%E9%99%85%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8">zookeeper 在实际中的使用<a class="anchor" href="#zookeeper-%E5%9C%A8%E5%AE%9E%E9%99%85%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8">§</a></h2>
+<h3 id="%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85">发布/订阅<a class="anchor" href="#%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85">§</a></h3>
 <ul>
-<li>命名服务就是指通过指定的名字来获取资源或者服务的地址,具体就是创建一个指定名称的节点,节点的数据就是实际的资源地址,我们使用的dubbo官方推荐就是使用zookeeper来做注册中心</li>
+<li>发布/订阅 ,即所谓的配置中心,发布者将数据存放到zookeeper的znode节点上面,订阅者通过对节点添加watcher就会收到最新的数据,已实现数据的集中管理和动态获取,具体案例-百度的disconf</li>
 </ul>
 <h3 id="%E5%91%BD%E5%90%8D%E6%9C%8D%E5%8A%A1">命名服务<a class="anchor" href="#%E5%91%BD%E5%90%8D%E6%9C%8D%E5%8A%A1">§</a></h3>
-<ul>
-<li>发布/订阅 ,即所谓的配置中心,发布者将数据存放到zookeeper的znode节点上面,订阅者通过对节点添加watcher就会收到最新的数据,已实现数据的集中管理和动态获取,具体案例-百度的disconf</li>
-</ul>
-<h3 id="%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85">发布/订阅<a class="anchor" href="#%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85">§</a></h3>
-<h3 id="zookeeper-%E5%9C%A8%E5%AE%9E%E9%99%85%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8">zookeeper 在实际中的使用<a class="anchor" href="#zookeeper-%E5%9C%A8%E5%AE%9E%E9%99%85%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8">§</a></h3>
-<h3 id="%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85-1">发布/订阅<a class="anchor" href="#%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85-1">§</a></h3>
-<ul>
-<li>发布/订阅 ,即所谓的配置中心,发布者将数据存放到zookeeper的znode节点上面,订阅者通过对节点添加watcher就会收到最新的数据,已实现数据的集中管理和动态获取,具体案例-百度的disconf</li>
-</ul>
-<h3 id="%E5%91%BD%E5%90%8D%E6%9C%8D%E5%8A%A1-1">命名服务<a class="anchor" href="#%E5%91%BD%E5%90%8D%E6%9C%8D%E5%8A%A1-1">§</a></h3>
 <ul>
 <li>命名服务就是指通过指定的名字来获取资源或者服务的地址,具体就是创建一个指定名称的节点,节点的数据就是实际的资源地址,我们使用的dubbo官方推荐就是使用zookeeper来做注册中心</li>
 </ul>
